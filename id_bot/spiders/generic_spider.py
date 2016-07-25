@@ -14,6 +14,6 @@ class GSpider(scrapy.Spider):
 	sel = Selector(response)
         results = sel.xpath("//*[contains(@id, 'ADD_SEEK_ID')]")
 
-        with open(filename, 'wb') as f:
+        with open(filename, 'a') as f:
         	for result in results:
 			f.write(result.extract())
